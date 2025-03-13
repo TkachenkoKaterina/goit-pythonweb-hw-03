@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - data_storage:/app/storage
+    restart: always
+
+volumes:
+  data_storage:
