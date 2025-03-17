@@ -65,7 +65,7 @@ class HttpHandler(BaseHTTPRequestHandler):
         self.send_response(status)
         self.send_header("Content-type", "text/html")
         self.end_headers()
-        with open(filename, "rb") as fd:
+        with open(f"templates/{filename}", "rb") as fd:
             self.wfile.write(fd.read())
 
     def render_tamplate(self, filename, status=200):
